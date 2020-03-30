@@ -1,0 +1,3 @@
+[submodule "IHaskell"]
+	path = ihaskell
+	url = git@github.com:tybrs/IHaskell.git
