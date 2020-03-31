@@ -8,7 +8,6 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx/etc/nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/etc/ssl/private:/etc/ssl/private
       
@@ -20,6 +19,8 @@ services:
       dockerfile: root/Dockerfile
     expose:
       - "8888"
+    volumes:
+      - ~/notebooks/:/home/polyglot/notebooks
 
   ihaskell:
     container_name: ihaskell
@@ -29,5 +30,5 @@ services:
       dockerfile: ihaskell/Dockerfile
     expose:
       - "8888"
-    ports:
-      - 8888:8888
+    volumes:
+      - ~/notebooks/:/home/polyglot/notebooks
